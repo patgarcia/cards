@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- This meta tag will only be used if JavaScript is disabled -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found</title>
   <noscript>
     <meta http-equiv="refresh" content="0; URL=/" />
   </noscript>
   <script type="text/javascript">
-    // Redirect to the root while preserving the path for react-router-dom
+    // Redirect to the root with the correct base path for react-router-dom
     (function() {
-      var redirectTo = window.location.pathname;
-      window.location.replace('/#' + redirectTo);
+      const pathName = window.location.pathname.replace('/cards/','')
+      var redirectTo = pathName + window.location.search;
+      window.location.replace('/cards/#' + redirectTo);
     })();
   </script>
 </head>
 <body>
-  Oops, cannot find what you're looking for
+  <h1>Oops, cannot find what you're looking for</h1>
 </body>
 </html>
