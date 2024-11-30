@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- This meta tag will only be used if JavaScript is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; URL=/" />
+  </noscript>
+  <script type="text/javascript">
+    // redirect all requests to root
+    const redirectTo = window.location.pathname;
+    window.location.replace('/?' + redirectTo);
+  </script>
 </head>
 <body>
   Opps cannot find what you're looking for
