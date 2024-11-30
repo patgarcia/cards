@@ -5,12 +5,14 @@
     <meta http-equiv="refresh" content="0; URL=/" />
   </noscript>
   <script type="text/javascript">
-    // redirect all requests to root
-    const redirectTo = window.location.pathname;
-    window.location.replace('/?' + redirectTo);
+    // Redirect to the root while preserving the path for react-router-dom
+    (function() {
+      var redirectTo = window.location.pathname;
+      window.location.replace('/#' + redirectTo);
+    })();
   </script>
 </head>
 <body>
-  Opps cannot find what you're looking for
+  Oops, cannot find what you're looking for
 </body>
 </html>
