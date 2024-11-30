@@ -1,27 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found</title>
-  <noscript>
-    <meta http-equiv="refresh" content="0; URL=/" />
-  </noscript>
-  <script type="text/javascript">
-    // Redirect to the root with the correct base path for react-router-dom
-    (function() {
-      const pathName = window.location.pathname.replace('/cards/', '');
-      const redirectTo = pathName + window.location.search;
-      const hash = redirectTo.replace('/', '');
-      if (hash) {
-        window.location.replace('/cards#' + hash);
-      } else {
-        window.location.replace('/cards');
-      }
-    })();
-  </script>
-</head>
-<body>
-  <h1>Oops, cannot find what you're looking for</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
+    <noscript>
+      <meta http-equiv="refresh" content="0; URL=/" />
+    </noscript>
+    <script type="text/javascript">
+      // Redirect to the root with the correct base path for react-router-dom
+      (function () {
+        const pathName = window.location.pathname.replace("/cards/", "");
+        const redirectTo = pathName + window.location.search;
+        const hash = redirectTo.replace("/", "");
+
+        document.body.appendChild(
+          <p>
+            pathName: {pathName} <br />
+            redirectTo: {redirectTo} <br />
+            hash: {hash}
+          </p>,
+        );
+        // if (hash) {
+        //   window.location.replace('/cards#' + hash);
+        // } else {
+        //   window.location.replace('/cards');
+        // }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Oops, cannot find what you're looking for</h1>
+  </body>
 </html>
