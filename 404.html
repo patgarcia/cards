@@ -14,13 +14,12 @@
         const redirectTo = pathName + window.location.search;
         const hash = redirectTo.replace("/", "");
 
-        document.body.appendChild(
-          <p>
-            pathName: {pathName} <br />
-            redirectTo: {redirectTo} <br />
-            hash: {hash}
-          </p>,
-        );
+        const p = document.createElement("p");
+        p.innerHTML = `pathName: ${pathName} <br />
+            redirectTo: ${redirectTo} <br />
+            hash: ${hash}`;
+
+        document.body.appendChild(p);
         // if (hash) {
         //   window.location.replace('/cards#' + hash);
         // } else {
