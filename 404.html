@@ -10,9 +10,14 @@
   <script type="text/javascript">
     // Redirect to the root with the correct base path for react-router-dom
     (function() {
-      const pathName = window.location.pathname.replace('/cards/','')
-      var redirectTo = pathName + window.location.search;
-      window.location.replace('/cards#' + redirectTo.replace('/',''));
+      const pathName = window.location.pathname.replace('/cards/', '');
+      const redirectTo = pathName + window.location.search;
+      const hash = redirectTo.replace('/', '');
+      if (hash) {
+        window.location.replace('/cards#' + hash);
+      } else {
+        window.location.replace('/cards');
+      }
     })();
   </script>
 </head>
