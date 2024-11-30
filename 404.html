@@ -9,10 +9,16 @@
     </noscript>
     <script type="text/javascript">
       // Redirect to the root with the correct base path for react-router-dom
-      (function () {
+      window.onload = function () {
         const pathName = window.location.pathname.replace("/cards/", "");
         const redirectTo = pathName + window.location.search;
         const hash = redirectTo.replace("/", "");
+
+        console.log({
+          pathName,
+          redirectTo,
+          hash,
+        });
 
         const p = document.createElement("p");
         p.innerHTML = `pathName: ${pathName} <br />
@@ -25,7 +31,7 @@
         // } else {
         //   window.location.replace('/cards');
         // }
-      })();
+      };
     </script>
   </head>
   <body>
